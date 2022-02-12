@@ -8,7 +8,7 @@ export default {
 
     data() {
         return {
-            indexInfo:[]
+            indexInfo:""
         }
     },
     methods: {
@@ -17,11 +17,8 @@ export default {
     mounted() {
       // 获取文章列表
       axios
-      .get('./data.json')
-      .then(response => (
-        this.indexInfo = response.data,
-        console.log(this.indexInfo)
-      ))
+      .get('http://localhost:8000/articleinfo')
+      .then(response => (this.indexInfo = JSON.parse(response.data).alists,console.log(this.indexInfo)))
     },
     components:{
       Article
@@ -31,7 +28,7 @@ export default {
 
 <template>
 
-  <Article v-for="(items, index) in indexInfo" :key="index"
+  <Article v-for="(items,index) in indexInfo" :key="index"
               :title="items.Title" 
               :text="items.text_context" 
               :classify="items.Classify" 
