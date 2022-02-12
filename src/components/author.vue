@@ -1,14 +1,27 @@
 <script setup>
+import axios from 'axios'
 
+</script>
+<script>
+export default{
+  data() {
+    return {
+      sidebar:"http://localhost:8000/static/sidebar.jpg",
+      Avatar:"http://localhost:8000/static/Avatar.jpg",
+      aMottos:"",
+      aName:""
+    }
+  },
+  mounted() {
+    axios.get('http://localhost:8000/static/AuthorInfo.json')
+    .then(response => {
+      this.aMottos = response.data.authorMottos
+      this.aName = response.data.authorName
+      console.log(this.aName,this.aMottos)
+    })
+  },
 
-defineProps({
-    authorName:String,
-    authorEmail:String,
-    authorIcon:String,
-    authorMottos:String,
-    backgroundImg:String
-})
-
+}
 </script>
 <template>
     <el-affix :offset="60">
@@ -17,10 +30,10 @@ defineProps({
     text-align: center;
     ">
     
-        <el-image fit="contain" :src="backgroundImg" style="width: 98%;margin-top: 1%;border-radius: 1%;"></el-image>
-        <el-image :src="authorIcon" style="border-radius: 50%;margin-top: -20%;width: 25%;"></el-image>
-        <h3>{{authorName}}</h3>
-        <p>{{authorMottos}}</p>
+        <el-image fit="contain" :src="sidebar" style="width: 98%;margin-top: 1%;border-radius: 1%;"></el-image>
+        <el-image :src="Avatar" style="border-radius: 50%;margin-top: -20%;width: 25%;"></el-image>
+        <h3>{{aName}}</h3>
+        <p>{{aMottos}}</p>
      
         </div>
     </el-affix>   

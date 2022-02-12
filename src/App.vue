@@ -15,6 +15,7 @@ export default {
             authorSpace:4,
             rightSpace:4,
             condition:true,
+
         }
     },
     components:{
@@ -45,12 +46,9 @@ export default {
             </el-col>
             
             <el-col :span="authorSpace" v-if="condition">
-            <Author 
-            backgroundImg="/static/sidebar.jpg" 
-            authorIcon="/static/火上术士.jpg" 
-            authorMottos="qwerqwerqwerqwer"
-            authorName="YMXC"
-            ></Author>
+            <Author>
+              
+            </Author>
             </el-col>
 
             <el-col :span="rightSpace"></el-col>
