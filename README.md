@@ -1,7 +1,58 @@
-# Vue 3 + Vite
+## 前言
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+本项目是为了学习Vue所做
 
-## Recommended IDE Setup
+## 预计功能
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+### 基本的博客功能
+
+#### 发
+
+写一个md编辑页
+
+#### 看
+
+md渲染
+
+名词,关键词注释
+
+#### 推送
+
+公众号推送
+
+邮箱推送
+
+#### 评论
+
+推送
+
+对词(段)评论
+
+### 待办事项
+
+1. 创建 完成 提醒
+2. 提醒时间 频率
+3. 推送
+
+### 游戏页
+
+对游戏的每日/每周轮换项目进行提示
+
+创建培养计划,合适时间提示
+
+体力恢复倒计时
+
+
+
+## 后端
+
+预计使用FastAPI实现
+
+
+
+
+
+
+
+
+
